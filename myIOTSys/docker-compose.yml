@@ -1,0 +1,34 @@
+services:
+
+# -- Broker mttq
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    restart: unless-stopped
+    ports:
+      - "1883:1883"    # MQTT
+      - "8883:8883"    # MQTTS (secure)
+      - "9001:9001"    # WebSockets
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    networks:
+      - iot-network
+# -- nodered para recibir/publicar datos      
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    environment:
+      - TZ=Europe/Madrid
+    restart: unless-stopped
+    ports:
+      - "1880:1880"    # Consola
+    volumes:
+      - ./data:/data
+    networks:
+      - iot-network
+# -- Ambos contenedores en la misma red
+networks:
+  iot-network:
+    driver: bridge

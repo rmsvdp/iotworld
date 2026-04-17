@@ -1,0 +1,268 @@
+[
+    {
+        "id": "4e627579088cc9a1",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "67515b6481c0bdb4",
+        "type": "mqtt-broker",
+        "name": "valor1",
+        "broker": "mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "47a1deafab681122",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7ad1f033f4742712",
+        "type": "inject",
+        "z": "4e627579088cc9a1",
+        "name": "Simulacion",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "tema1",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "501ec6e7dc09eb1c"
+            ]
+        ]
+    },
+    {
+        "id": "501ec6e7dc09eb1c",
+        "type": "function",
+        "z": "4e627579088cc9a1",
+        "name": "tiempo",
+        "func": "// Temperatura entre 20 y 30 grados\nmsg.payload = (20 + Math.random() * 10).toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "1cb226e633661e4b"
+            ]
+        ]
+    },
+    {
+        "id": "1cb226e633661e4b",
+        "type": "mqtt out",
+        "z": "4e627579088cc9a1",
+        "name": "",
+        "topic": "sensor/dato",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "47a1deafab681122",
+        "x": 190,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f8fb9ce3a7dc3a21",
+        "type": "mqtt in",
+        "z": "4e627579088cc9a1",
+        "name": "",
+        "topic": "sensor/dato",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "47a1deafab681122",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 480,
+        "wires": [
+            [
+                "cdd23bc075a619ac",
+                "0e9de68d47ebc996"
+            ]
+        ]
+    },
+    {
+        "id": "cdd23bc075a619ac",
+        "type": "debug",
+        "z": "4e627579088cc9a1",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "0e9de68d47ebc996",
+        "type": "change",
+        "z": "4e627579088cc9a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "valor_actual",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5750ddca1171e2f2",
+        "type": "http in",
+        "z": "4e627579088cc9a1",
+        "name": "",
+        "url": "/leer",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "dd36779503dded74"
+            ]
+        ]
+    },
+    {
+        "id": "dd36779503dded74",
+        "type": "change",
+        "z": "4e627579088cc9a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "move",
+                "p": "valor_actual",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 450,
+        "y": 220,
+        "wires": [
+            [
+                "a09ad290f3f025f7"
+            ]
+        ]
+    },
+    {
+        "id": "a09ad290f3f025f7",
+        "type": "http request",
+        "z": "4e627579088cc9a1",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "",
+        "persist": false,
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 690,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    }
+]
