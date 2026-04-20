@@ -2,7 +2,7 @@
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include <PubSubClient.h>
-#include "cfg.h"
+#include "cfg.h"    // Configuración del proyecto
 
 float pepe=0.0;
 AsyncWebServer server(80);
