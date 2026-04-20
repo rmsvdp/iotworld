@@ -17,9 +17,8 @@ Proyectos con Arduino Uno Q
 
 ## Esp32
 
-### Thinker Cam
+Proyectos con Esp-32 : WIFI LoraWan // ThinkerCam
 
-## STM32 : LoraWan WIFI v2
 
 
 
