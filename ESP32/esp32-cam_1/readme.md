@@ -3,7 +3,7 @@
 
 # Servidores Node-Red y Mosquito
 
-Implementados con Docker
+Implementados con Docker: consultar el proyecto MyIOTSys que está dentro de iotworld
 
 # Software en ESP-32
 
