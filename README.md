@@ -7,18 +7,13 @@ Proyectos con raspi pico
 ## MyIotSys
 Entorno dockerizado con node-red y broker mqtt mosquito
 
-## Arduino
-
 ### UnoQ
-
 Proyectos con Arduino Uno Q
 
 ### Arduino1-R3
-
 Proyectos Arduino Legacy
 
 ## Esp32
-
 Proyectos con Esp-32 : WIFI LoraWan // ThinkerCam
 
 
