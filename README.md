@@ -13,7 +13,7 @@ Entorno dockerizado con node-red y broker mqtt mosquito
 
 Proyectos con Arduino Uno Q
 
-### Arduino 1 R3
+### Arduino1-R3
 
 Proyectos Arduino Legacy
 
