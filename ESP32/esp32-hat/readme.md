@@ -1,4 +1,4 @@
-#ESP32-HAT
+# ESP32-HAT
 Módulo genérico que combina las siguientes funcionalidades:
 * Reproductor MP3 con DFPlayer Mini
 * ESP32 CAM para Comunicación Bluethoot con mando Wii
