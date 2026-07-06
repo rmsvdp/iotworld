@@ -10,7 +10,7 @@ Se necesita una la libería específica :
 * DFPLayer mini : https://github.com/DFRobot/DFRobotDFPlayerMini
 Los archivos mp3 se guardan en la tarjeta SD y precisan una nomenclatura especial:
 * Debe existir una carpeta mp3 en la raíz de la tarjeta
-* Dentro de esta carpeta los archivos se nombran de arcuerdo a este convenio: nnn.mp3, siendo n = 0 .. 9
+* Dentro de esta carpeta los archivos se nombran de arcuerdo a este convenio: nnnn.mp3, siendo n = 0 .. 9
 
 ## Esquema
 
