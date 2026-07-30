@@ -4,8 +4,9 @@ Proyecto para utilizar sensores MLX90614 , detectores de presencia y cámara int
 
 ## Disclaimer
 
-Este proyecto no ofrece garantía alguna de fiabilidad, seguridad para su uso en escenarios reales con ánimo comercial.
-Se trata de un trabajo exclusivamente académico, no lo uses en tu casa !!
+- Este proyecto no ofrece garantía alguna de fiabilidad, seguridad para su uso en escenarios reales
+- No tiene ningún ánimo comercial.
+- Se trata de un trabajo exclusivamente académico, no lo uses en tu casa !!
 
 ## Objetivo
 
