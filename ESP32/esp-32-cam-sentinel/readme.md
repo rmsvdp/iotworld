@@ -46,6 +46,6 @@ La unidad m1 recibe y ejecuta órdenes de procesamiento del la unidad m2, esenci
 enviar peticiones a la unidad de m2 ante determinados eventos
 La unidad m2 contiene la lógica completa, ante señalesm /datos provenientes del sensor de presencia o datos de la unidad m2, captura la zona con la cámara
 
-En la fase inicial , todo se mostrará a partir de una pagina visualizable en un dispositivo móvil que se encuentre en la red
+En la fase inicial , todo se mostrará a partir de una pagina visualizable en un dispositivo móvil que se encuentre en la red  
 Posteriormente, con conexión internet, se podrán enviar alarmas.
     
