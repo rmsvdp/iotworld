@@ -1,0 +1,66 @@
+#Preparar entorno RasPi Pico con NeoPixels y Micropython
+
+
+# DOCUMENTACIÓN PI PICO / NeoPixels
+
+https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html
+
+https://github.com/raspberrypi/pico-examples
+
+https://github.com/raspberrypi/pico-sdk
+
+https://docs.micropython.org/en/latest/rp2/quickref.html
+
+https://core-electronics.com.au/guides/how-to-use-ws2812b-rgb-leds-with-raspberry-pi-pico/
+
+https://bhave.sh/micropython-neopixels-1/
+
+LIBRERÍA ESPECIFICA PARA RasPi PICO CON Micropython
+
+https://github.com/blaz-r/pi_pico_neopixel
+
+# Proceso
+
+0.- Es preciso tener micropython instalado !!
+1.- Descargar librería desde : https://github.com/blaz-r/pi_pico_neopixel
+2.- Seguir este tutorial: https://github.com/blaz-r/pi_pico_neopixel/wiki/Initialization
+
+3.- Ejemplo libreria picozero
+
+from picozero import LED
+
+led = LED(11) # Este número está asociado al numero de GPIO, en este caso GPIO11 que está
+              # en el pin numero 15 de la placa
+
+led.blink()
+
+4.- ejemplo neopixels-1/
+import time
+from neopixel import Neopixel
+
+numpix = 48
+# El pin es lógico, es decir 15 hace referencia
+# al GPIO15, que está en el pin 20 de la placa
+strip = Neopixel(numpix, 0, 15, "RGB")
+
+red = (255, 0, 0)
+orange = (255, 165, 0)
+yellow = (255, 150, 0)
+green = (0, 255, 0)
+blue = (0, 0, 255)
+indigo = (75, 0, 130)
+violet = (138, 43, 226)
+colors_rgb = (red, orange, yellow, green, blue, indigo, violet)
+
+# uncomment colors_rgb if you have RGB strip
+colors = colors_rgb
+#colors = colors_rgbw
+
+strip.brightness(42)
+
+while True:
+    for color in colors:
+        for i in range(numpix):
+            strip.set_pixel(i, color)
+            time.sleep(0.01)
+            strip.show()
